@@ -18,13 +18,18 @@ class App extends Component {
       })
   }
 
+  eventHandler = (e) => {
+    this.setState({ searchField: e.target.value })
+  }
   render() {
     const filteredUser = this.state.users.filter(user => {
       return user.name.toLowerCase().includes(this.state.searchField.toLowerCase());
     })
     return (
+
       <div className="App">
-        <SearchBox placeholder="Search User" handleChange={e => this.setState({ searchField: e.target.value })} />
+        <h1>Kitten Rolodex</h1>
+        <SearchBox placeholder="Search User" handleChange={this.eventHandler} />
         <CardList users={filteredUser} />
       </div>
     )
