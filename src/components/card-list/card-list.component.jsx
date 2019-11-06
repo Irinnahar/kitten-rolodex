@@ -1,7 +1,8 @@
 import React from 'react';
-import './card-list.styles.css';
 import Card from '../card/card.component';
+import PropTypes from 'prop-types';
 
+import './card-list.styles.css';
 const CardList = props => {
   return (
     <div className="card-list">
@@ -14,4 +15,7 @@ const CardList = props => {
   )
 }
 
+CardList.prototype = {
+  user: PropTypes.object
+}
 export default CardList;
